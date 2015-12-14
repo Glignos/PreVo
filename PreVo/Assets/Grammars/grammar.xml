@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<grammar xml:lang="en-US" root="test"
+tag-format="semantics/1.0" version="1.0"
+xmlns="http://www.w3.org/2001/06/grammar">
+         xml:lang="en-US" version="1.0"
+         root="command"
+         mode="voice"
+         tag-format="semantics/1.0.2006">
+<rule id="page_nav">
+  <one-of>
+    <item>
+      next
+      <tag> out.KEY_COMMAND_TYPE="COMMAND_NEXT"; </tag>
+    </item>
+    <item>previous</item>
+    
+  </one-of>
+</rule>
+  <rule id="command">
+    <one-of>
+      <item>
+        sort by
+        <tag> out.KEY_COMMAND_TYPE="COMMAND_SORT_BY"; </tag>
+      </item>
+      <item>filter by</item>
+      <item>calculate</item>
+      <item>plot on</item>
+    </one-of>
+    <item repeat="0-1"><ruleref uri="#calculate_category" /></item>
+    <item><ruleref uri="#category" /></item>
+    <item repeat="0-1"><ruleref uri="#value" /></item>
+  </rule>
+  <rule id="value">
+    <one-of>
+      <item>greater than</item>
+      <item>less than</item>
+      <item>equal with</item>
+    </one-of>
+    <ruleref uri="builtin:grammar/number" />
+  </rule>
+  <rule id="category">
+    <one-of>
+      <item>seller</item>
+      <item>customer</item>
+      <item>area</item>
+      <item>value</item>
+      <item>quantity</item>
+      <item>date</item>
+    </one-of>
+  </rule>
+  <rule id="calculate_category">
+    <one-of>
+      <item>sum</item>
+      <item>average</item>
+    </one-of>
+  </rule>
+</grammar>
+

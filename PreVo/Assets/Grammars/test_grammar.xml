@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<grammar xml:lang="en-US" root="command"
+tag-format="semantics/1.0" version="1.0"
+xmlns="http://www.w3.org/2001/06/grammar">
+
+
+  <rule id="command">
+    <one-of>
+      <item repeat="0-1">
+        <ruleref uri="#page_nav" />
+      </item>
+      <item repeat="0-1">
+        <ruleref uri="#highlight" />
+      </item>
+      <item repeat="0-1">
+        <ruleref uri="#commands" />
+        <item>
+          <ruleref uri="#category" />
+        </item>
+        <one-of>
+          <item>
+            <ruleref uri="#calculate_category" />
+          </item>
+          <item>
+            <ruleref uri="#compare" />
+            <item repeat="0-3">
+              <ruleref uri="#digit"/>
+            </item>
+          </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="calculate_category">
+    <one-of>
+      <item>
+        sum
+        <tag> out.CALC_TYPE="CALC_SUM"; </tag>
+      </item>
+      <item>
+        average
+        <tag> out.CALC_TYPE="CALC_AVERAGE"; </tag>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="page_nav">
+    <one-of>
+      <item>
+        next
+        <tag> out.KEY_COMMAND_TYPE="COMMAND_NEXT"; </tag>
+      </item>
+      <item>
+        previous
+        <tag> out.KEY_COMMAND_TYPE="COMMAND_PREVIOUS"; </tag>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="highlight">
+    <item>
+      highlight
+      <tag> out.KEY_COMMAND_TYPE="COMMAND_HIGH"; </tag>
+    </item>
+    <one-of>
+      <item>
+        zebra picture
+        <tag> out.HIGHLIGHT_OBJ="ZEB_PIC"; </tag>
+      </item>
+      <item>
+        ape picture
+        <tag> out.HIGHLIGHT_OBJ="APE_PIC"; </tag>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="digit">
+    <one-of>
+      <item>
+        one
+        <tag> out.DIGIT_NUM=1; </tag>
+      </item>
+      <item>
+        two
+        <tag> out.DIGIT_NUM=2; </tag>
+      </item>
+      <item>
+        three
+        <tag> out.DIGIT_NUM=3; </tag>
+      </item>
+      <item>
+        four
+        <tag> out.DIGIT_NUM=4; </tag>
+      </item>
+      <item>
+        five
+        <tag> out.DIGIT_NUM=5; </tag>
+      </item>
+      <item>
+        six
+        <tag> out.DIGIT_NUM=6; </tag>
+      </item>
+      <item>
+        seven
+        <tag> out.DIGIT_NUM=7; </tag>
+      </item>
+      <item>
+        eight
+        <tag> out.DIGIT_NUM=8; </tag>
+      </item>
+      <item>
+        nine
+        <tag> out.DIGIT_NUM=9; </tag>
+      </item>
+      <item>
+        zero
+        <tag> out.DIGIT_NUM=0; </tag>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="category">
+    <one-of>
+      <item>
+        seller
+        <tag> out.CATEGORY_TYPE="CATEGORY_SELLER"; </tag>
+      </item>
+      <item>
+        customer
+        <tag> out.CATEGORY_TYPE="CATEGORY_CUSTOMER"; </tag>
+      </item>
+      <item>
+        area
+        <tag> out.CATEGORY_TYPE="CATEGORY_AREA"; </tag>
+      </item>
+      <item>
+        value
+        <tag> out.CATEGORY_TYPE="CATEGORY_VALUE"; </tag>
+      </item>
+      <item>
+        quantity
+        <tag> out.CATEGORY_TYPE="CATEGORY_QUANTITY"; </tag>
+      </item>
+      <item>
+        date
+        <tag> out.CATEGORY_TYPE="CATEGORY_DATE"; </tag>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="commands">
+    <one-of>
+      <item>
+        sort by
+        <tag> out.KEY_COMMAND_TYPE="COMMAND_SORT_BY"; </tag>
+      </item>
+      <item>
+        filter by
+        <tag> out.KEY_COMMAND_TYPE="COMMANDS_FILTER_BY"; </tag>
+      </item>
+      <item>
+        calculate
+        <tag> out.KEY_COMMAND_TYPE="COMMAND_CALCULATE"; </tag>
+      </item>
+      <item>
+        plot on
+        <tag> out.KEY_COMMAND_TYPE="COMMAND_PLOT_ON"; </tag>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="compare">
+    <one-of>
+      <item>
+        greater than
+        <tag> out.COMP_TYPE="COMPARE_GTHAN"; </tag>
+      </item>
+      <item>
+        less than
+        <tag> out.COMP_TYPE="COMPARE_LTHAN"; </tag>
+      </item>
+      <item>
+        equal to
+        <tag> out.COMP_TYPE="COMPARE_ETO"; </tag>
+      </item>
+    </one-of>
+  </rule>
+</grammar>
+

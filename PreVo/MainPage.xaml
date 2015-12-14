@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="PreVo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PreVo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="using:WinRTXamlToolkit.Controls"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView x:Name="MySplitView" DisplayMode="CompactInline" IsPaneOpen="False" CompactPaneLength="100" OpenPaneLength="250">
+            <SplitView.Pane>
+                <StackPanel Background="DarkGray">
+                    <Button HorizontalAlignment="Left" x:Name="HamburgerButton" Click="HamburgerButton_Click" Background="Black" Height="100" Width="250">
+                        <Image Margin="0 0 148 0" HorizontalAlignment="Left" Width="80" Source="http://cdn.c.photoshelter.com/img-get/I0000rMTiREsC2gY/s/600/600/Cooked-Hamburger-TLC.jpg"/>
+                    </Button>
+                    <ListView Background='DarkGray' SelectionChanged="ListView_SelectionChanged">
+                        <ListView.Items>
+                            <ListViewItem Name="dashboard_nav" Padding="25 0 25 0" Height="100" Background="DarkGray">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Viewbox MaxHeight="50" MaxWidth="50">
+                                            <SymbolIcon Symbol="57615" Foreground="White" />
+                                        </Viewbox>
+                                        <TextBlock Margin="23 10 20 0" FontSize="25" Foreground="White">Dashboard</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem Name="manage_nav" Padding="25 0 25 0" Height="100" Background="DarkGray">
+                                <StackPanel Orientation="Horizontal">
+                                    <Viewbox MaxHeight="50" MaxWidth="50">
+                                        <SymbolIcon Symbol="57651" Foreground="White" />
+                                    </Viewbox>
+                                    <TextBlock Margin="23 10 20 0" FontSize="25" Foreground="White">Manage</TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem Name="libr_nav" Padding="25 0 25 0" Height="100" Background="DarkGray">
+                                <StackPanel Orientation="Horizontal">
+                                    <Viewbox MaxHeight="50" MaxWidth="50">
+                                        <SymbolIcon Symbol="57811" Foreground="White" />
+                                    </Viewbox>
+                                    <TextBlock Margin="23 10 20 0" FontSize="25" Foreground="White">Library</TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem Name="pref_nav" Padding="25 0 25 0" Height="100" Background="DarkGray">
+                                <StackPanel Orientation="Horizontal">
+
+                                    <Viewbox MaxHeight="50" MaxWidth="50">
+                                        <SymbolIcon Symbol="57621" Foreground="White" />
+                                    </Viewbox>
+                                    <TextBlock Margin="23 10 20 0" FontSize="25" Foreground="White">Preferences</TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                        </ListView.Items>
+                    </ListView>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame x:Name="frame"
+                   Navigated="OnNavigatedToPage">
+                    <Frame.ContentTransitions>
+                        <TransitionCollection>
+                            <NavigationThemeTransition>
+                                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                    <EntranceNavigationTransitionInfo/>
+                                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                            </NavigationThemeTransition>
+                        </TransitionCollection>
+                    </Frame.ContentTransitions>
+                </Frame>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>

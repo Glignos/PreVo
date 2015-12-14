@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="PreVo.DashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PreVo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <!--<Grid.Background>
+                <ImageBrush ImageSource="http://theartmad.com/wp-content/uploads/Cool-Light-Grey-Background-01.jpg" />
+            </Grid.Background>-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Padding="35 25 20 20" Orientation="Horizontal" Background="LightGray">
+                <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">PreVo</TextBlock>
+                <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">></TextBlock>
+                <TextBlock Foreground="black" FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">Dashboard</TextBlock>
+            </StackPanel>
+            <StackPanel Padding="35 20 20 20" Grid.Row="1" Orientation="Vertical" Background="White">
+                <TextBlock FontSize="35">Welcome back, Mr. Jobs</TextBlock>
+                <TextBlock FontSize="20">Here are your presentations:</TextBlock>
+            </StackPanel>
+            <StackPanel Padding="35 45 20 20" Grid.Row="2" Orientation="Horizontal" Background="White">
+                <Button VerticalAlignment="Top" Height="300" Width="300" Click="Button_Click_Car_Sales" Background='DodgerBlue' Margin="0 0 20 0">
+                    <StackPanel>
+                        <Viewbox MaxHeight="60" MaxWidth="60" Margin="0 0 0 15">
+                            <SymbolIcon Symbol="57643" Foreground="White" />
+                        </Viewbox>
+                        <TextBlock HorizontalAlignment="Center" FontSize="25" Foreground="White">Car Sales</TextBlock>
+                        <TextBlock HorizontalAlignment="Right" FontSize="15" Foreground="LightGray">Created on: 25/3/2018</TextBlock>
+                    </StackPanel>
+                    
+                </Button>
+
+                <Button VerticalAlignment="Top" Height="300" Width="300" Background='DodgerBlue' Click="Button_Click_University_Lecture" Margin="0 0 20 0">
+                    <StackPanel>
+                        <Viewbox MaxHeight="60" MaxWidth="60" Margin="0 0 0 15">
+                            <SymbolIcon Symbol="57643" Foreground="White" />
+                        </Viewbox>
+                        <TextBlock HorizontalAlignment="Center" FontSize="25" Foreground="White">University Lecture</TextBlock>
+                        <TextBlock HorizontalAlignment="Right" FontSize="15" Foreground="LightGray">Created on: 25/3/2018</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

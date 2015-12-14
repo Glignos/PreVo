@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="PreVo.ManagePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PreVo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Padding="35 25 20 20" Orientation="Horizontal" Background="LightGray">
+            <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">PreVo</TextBlock>
+            <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">></TextBlock>
+            <TextBlock Foreground="black" VerticalAlignment="Center" FontSize="28" Margin="0 0 10 0">Manage Presentations</TextBlock>
+        </StackPanel>
+        <StackPanel Padding="35 20 20 20" Grid.Row="1" Orientation="Vertical" Background="White">
+            <TextBlock FontSize="35">Manage your presentations</TextBlock>
+            <TextBlock FontSize="20">You can edit and delete stuff:</TextBlock>
+        </StackPanel>
+        <StackPanel Padding="35 45 20 20" Grid.Row="2" Orientation="vertical" Background="White">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="500" Background='Gray' Margin="0 0 20 20">
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox MaxHeight="60" MaxWidth="60" Margin="0 0 20 0">
+                        <SymbolIcon Margin="20 0 0 0" Symbol="57643" Foreground="White" />
+                    </Viewbox>
+                    <TextBlock Width="360" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="White">Car Sales</TextBlock>
+                    <StackPanel Width="auto" HorizontalAlignment="Right">
+                        <Button>
+                            <SymbolIcon Height="40" Width="40" Symbol="57604" Foreground="DeepSkyBlue" />
+                        </Button>
+                        <Button>
+                            <SymbolIcon Height="40" Width="40" Symbol="57607" Foreground="Tomato" />
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="500" Background='Gray' Margin="0 0 20 0">
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox MaxHeight="60" MaxWidth="60" Margin="0 0 20 0">
+                        <SymbolIcon Margin="20 0 0 0" Foreground="White" />
+                    </Viewbox>
+                    <TextBlock Width="360" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="White">University Lecture</TextBlock>
+                    <StackPanel  HorizontalAlignment="Right">
+                        <Button>
+                            <SymbolIcon Height="40" Width="40" Symbol="57604" Foreground="DeepSkyBlue" />
+                        </Button>
+                        <Button>
+                            <SymbolIcon Height="40" Width="40" Symbol="57607" Foreground="Tomato" />
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="PreVo.PresentationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PreVo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar Background="Black" Foreground="White">
+            <AppBarButton Foreground="White" Content="test" Icon="FulLScreen"></AppBarButton>
+            <AppBarButton Name="PrevSlide" Click="PrevSlide_Click" Foreground="White" Content="test" Icon="Previous"></AppBarButton>
+            <AppBarButton Name="NextSlide" Click="NextSlide_Click" Foreground="White" Content="test" Icon="Next"></AppBarButton>
+            <AppBarButton Name="VoiceCommand" Click="VoiceCommand_Click" Foreground="White" Content="test" Icon="Microphone"></AppBarButton>
+            <AppBarButton Name="VoiceCommandWithUI" Click="VoiceCommandWithUI_Click" Foreground="LightBlue" Content="test" Icon="Microphone"></AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Padding="35 25 20 20" Orientation="Horizontal" Background="LightGray">
+            <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">PreVo</TextBlock>
+            <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">></TextBlock>
+            <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">Dashboard</TextBlock>
+            <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">></TextBlock>
+            <TextBlock FontSize="28" VerticalAlignment="Center" Margin="0 0 5 0">Car Sales</TextBlock>
+
+        </StackPanel>
+        
+        <StackPanel Padding="35 45 20 20" Grid.Row="1" Orientation="Vertical" Background="White">
+            <Frame x:Name="slideFrame">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <SlideNavigationTransitionInfo/>
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </StackPanel>
+    </Grid>
+</Page>

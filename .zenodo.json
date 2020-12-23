@@ -1,5 +1,5 @@
 {
-"description": ["prevo is prevo"],
+"description": "prevo is prevo",
 "license": "other-open",
 "title": "Prevo",
 "version": "v1.0.5",
@@ -21,7 +21,7 @@
 {
 "scheme": "url",
 "identifier": "https://notarealURL",
-"relation": "isSupplementTo"
+"relation": "is Supplement To"
 }
 ]
 }

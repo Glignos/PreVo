@@ -1,4 +1,11 @@
 {
+"contributors": [
+        {
+            "name": "Doe Johnson",
+            "type": "Project Member",
+            "orcid": "0000-0000-0000-0000"
+        }
+  ],
 "description": "prevo is prevo",
 "license": "other-open",
 "title": "Prevo",

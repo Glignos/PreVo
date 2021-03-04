@@ -16,12 +16,5 @@
 "name": "Bip"
 }
 ],
-"access_right": "open",
-"contributors": [
-        {
-            "name": "Doe Johnson",
-            "type": "Project Member",
-            "orcid": "0000-0000-0000-0000"
-        }
-  ]
+"access_right": "open"
 }

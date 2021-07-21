@@ -4,6 +4,7 @@
 "version": "v1.0.5",
 "upload_type": "software",
 "publication_date": "2020-10-01",
+"license": "cc-by-nc-nd-4.0",
 "creators": [
 {
 "name": "Bop"
